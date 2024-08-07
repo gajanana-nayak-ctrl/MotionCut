@@ -1,0 +1,142 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.background .bg-image, .background .trees-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.trees-image {
+    z-index: 2; 
+}
+
+.bicycle {
+    position: absolute;
+    bottom: 20%;
+    left: -30%;
+    width: 60%; 
+    animation: bicycleMove 10s infinite linear;
+    z-index: 1; 
+}
+
+.bicycle-image {
+    width: 40%;
+    height: auto;
+    transform: scaleX(-1); 
+}
+
+.leaves {
+    position: absolute;
+    top: -20%;
+    width: 100%;
+    height: 100%;
+    z-index: 4; 
+}
+
+.leaf {
+    position: absolute;
+    animation: fall linear infinite;
+    max-width: 100px;
+}
+
+.leaf1 { animation-duration: 6s; left: 10%; }
+.leaf2 { animation-duration: 5s; left: 50%; }
+.leaf3 { animation-duration: 7s; left: 80%; }
+
+@keyframes bicycleMove {
+    0% { left: -60%; transform: scaleX(1); }
+    25% { left: 20%; }
+    50% { left: 100%; transform: scaleX(1); }
+    51% { transform: scaleX(-1); }
+    75% { left: 20%; }
+    100% { left: -60%; transform: scaleX(-1); }
+}
+
+@keyframes fall {
+    0% { top: -10%; opacity: 1; }
+    100% { top: 100%; opacity: 1; }
+}
+
+
+.signin-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.2); 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 3; 
+    text-align: center;
+    width: 400px; 
+    backdrop-filter: blur(10px); 
+}
+
+.signin-form h2 {
+    margin: 0 0 20px;
+    font-size: 28px;
+    color: #b73f3f;
+}
+
+.signin-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.signin-form input {
+    
+    padding: 12px;
+    margin: 12px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.signin-form button {
+    padding: 12px;
+    background-color: #b73f3f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.signin-form button:hover {
+    background-color: #a83232;
+}
+
+.form-footer {
+    margin-top: 10px;
+}
+
+.form-footer a {
+    color: #b73f3f;
+    text-decoration: none;
+    margin: 0 50px;
+    font-size: 16px; 
+}
+
+.form-footer a:hover {
+    text-decoration: underline;
+}
